@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InitialKata.App\InitialKata.App.csproj" />
+    <ProjectReference Include="..\FizzBuzzKata.App\FizzBuzzKata.App.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>$(OutputType)</OutputType>
-    <TargetFramework>$(TargetFramework)</TargetFramework>
-  </PropertyGroup>
-
-</Project>

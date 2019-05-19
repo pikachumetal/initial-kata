@@ -32,7 +32,10 @@ namespace ArgsKata.App
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arguments"></param>
         public void Parse(ICollection<string> arguments)
         {
             if (!arguments.Any()) return;

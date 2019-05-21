@@ -16,7 +16,7 @@ namespace RomanToDecimal.App
             { "M", 1000 },
         };
 
-        public string Value { get; private set; }
+        private string Value { get; }
 
         public RomanNumber(string value)
         {
@@ -50,20 +50,20 @@ namespace RomanToDecimal.App
                 var actual = GetRomanString(index);
                 var next = GetRomanString(index + 1);
 
-                if (IsGreaterOrLast(actual,next))
-                {
-                    result += actual - accumulator;
-                    accumulator = 0;
-                }
-                else
-                {
-                    accumulator += actual;
-                }
+                accumulator = IsGreaterOrLast(actual, next)
+                    ? ResetAccumulatorAndCalculateResult(actual, accumulator, ref result)
+                    : accumulator + actual;
             }
 
             return result;
         }
-        
+
+        private static int ResetAccumulatorAndCalculateResult(int actual, int accumulator, ref int result)
+        {
+            result += actual - accumulator;
+            return 0;
+        }
+
         private static bool IsGreaterOrLast(int actual, int next) => actual >= next || next == 0;
 
         private int GetRomanString(int index)
